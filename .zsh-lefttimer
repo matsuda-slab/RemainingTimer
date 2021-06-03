@@ -1,0 +1,20 @@
+function setLeftTimer() {
+	CMD=gdate
+
+	EVENTNAME="オープンキャンパス"
+	YEAR=2021
+	MONTH=7
+	DAY=17
+	EVENTDATE="$YEAR/$MONTH/$DAY"
+
+	var=`expr \( \`$CMD -d"$EVENTDATE" +%s\` - \`$CMD +%s\` \) / 60 / 60 / 24`
+	echo あと$var日
+
+	# PROMPT 変数に改行があるか判定
+	if [ `echo $PROMPT | wc -l` = 2 ]; then
+		PROMPT=`echo $PROMPT | sed -E "s/\n//"`
+		PROMPT="$PROMPT $EVENTNAME まで あと $var 日"$'\n'
+	fi
+}
+
+setLeftTimer
