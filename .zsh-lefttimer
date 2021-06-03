@@ -1,20 +1,30 @@
 function setLeftTimer() {
-	CMD=gdate
+### Set the event name and date hear ###
+	local EVENTNAME="オープンキャンパス"
+	local YEAR=2021
+	local MONTH=6
+	local DAY=17
+########################################
 
-	EVENTNAME="オープンキャンパス"
-	YEAR=2021
-	MONTH=7
-	DAY=17
-	EVENTDATE="$YEAR/$MONTH/$DAY"
+	# local CMD=date			# for GNU
+	local CMD=gdate		  # for BSD
 
-	var=`expr \( \`$CMD -d"$EVENTDATE" +%s\` - \`$CMD +%s\` \) / 60 / 60 / 24`
-	echo あと$var日
+	local EVENTDATE="$YEAR/$MONTH/$DAY"
+	local TEXT1="まであと"
+	local TEXT2="日"
 
-	# PROMPT 変数に改行があるか判定
-	if [ `echo $PROMPT | wc -l` = 2 ]; then
-		PROMPT=`echo $PROMPT | sed -E "s/\n//"`
-		PROMPT="$PROMPT $EVENTNAME まで あと $var 日"$'\n'
+	local REMAIN=`expr \( \`$CMD -d"$EVENTDATE" +%s\` - \`$CMD +%s\` \) / 60 / 60 / 24`
+
+	if	 [ $REMAIN -le  7 ]; then COLOR="red"
+	elif [ $REMAIN -le 14 ]; then COLOR="magenta"
+	elif [ $REMAIN -le 21 ]; then COLOR="yellow"
+	elif [ $REMAIN -le 28 ]; then COLOR="cyan"
+	elif [ $REMAIN -le 35 ]; then COLOR="green"
+	else													COLOR="white"
 	fi
+
+	PROMPT=`echo $PROMPT | sed -E "s/  $EVENTNAME.*$TEXT2//"`
+	PROMPT="$PROMPT  $EVENTNAME $TEXT1 %F{$COLOR}$REMAIN%f $TEXT2"$'\n'
 }
 
 setLeftTimer
