@@ -2,7 +2,7 @@ function setLeftTimer() {
 ### Set the event name and date hear ###
 	local EVENTNAME="オープンキャンパス"
 	local YEAR=2021
-	local MONTH=6
+	local MONTH=7
 	local DAY=17
 ########################################
 
