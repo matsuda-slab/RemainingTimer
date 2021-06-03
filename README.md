@@ -1,5 +1,9 @@
 ## Left Time Reminder
-This script add remaining time to a certain event to your prompt.
+This script add remaining days to a certain event to your prompt.
+
+## Requirements
+* Nothing for Linux
+* gdate for Mac OS
 
 ## Usage
 1. Put .zsh-lefttimer in your home directory.
