@@ -23,6 +23,7 @@ function setLeftTimer() {
 	else													COLOR="white"
 	fi
 
+	PROMPT=`echo $PROMPT | sed "s/\n//"`
 	PROMPT=`echo $PROMPT | sed -E "s/  $EVENTNAME.*$TEXT2//"`
 	PROMPT="$PROMPT  $EVENTNAME $TEXT1 %F{$COLOR}$REMAIN%f $TEXT2"$'\n'
 }
