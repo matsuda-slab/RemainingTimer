@@ -1,9 +1,11 @@
 function setRemainingTimer() {
+########################################
 ### Set the event name and date hear ###
 	local EVENTNAME="オープンキャンパス"
 	local YEAR=2021
 	local MONTH=7
 	local DAY=17
+########################################
 ########################################
 
 	ls /etc/*release >/dev/null 2>&1
@@ -29,7 +31,12 @@ function setRemainingTimer() {
 
 	PROMPT=`echo $PROMPT | sed "s/\n//"`
 	PROMPT=`echo $PROMPT | sed -E "s/  $EVENTNAME.*$TEXT2//"`
-	PROMPT="$PROMPT  $EVENTNAME $TEXT1 %F{$COLOR}$REMAIN%f $TEXT2"$'\n'
+
+	if [ $REMAIN -ge 0 ]; then
+		PROMPT="$PROMPT  $EVENTNAME $TEXT1 %F{$COLOR}$REMAIN%f $TEXT2"$'\n'
+	else
+		PROMPT="$PROMPT"$'\n'
+	fi
 }
 
 setRemainingTimer
