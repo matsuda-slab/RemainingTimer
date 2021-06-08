@@ -16,11 +16,11 @@ Opening .zsh-remainingtimer by editor, edit the variables 'EVENTNAME', 'YEAR',
 	`$ source ~/.zshrc`
 
 ## Image
-	before sourcing
-	![unsettimer](https://user-images.githubusercontent.com/53845948/121271937-b8592e00-c8ff-11eb-8212-7a204d4b0f90.png)
+before sourcing
+![unsettimer](https://user-images.githubusercontent.com/53845948/121271937-b8592e00-c8ff-11eb-8212-7a204d4b0f90.png)
 
-	after sourcing
-	![settimer](https://user-images.githubusercontent.com/53845948/121272078-0a9a4f00-c900-11eb-8d40-4829baa019f2.png)
+after sourcing
+![settimer](https://user-images.githubusercontent.com/53845948/121272078-0a9a4f00-c900-11eb-8d40-4829baa019f2.png)
 
 ## Note
 If an error message "no matches found" is shown when sourcing the script on your
