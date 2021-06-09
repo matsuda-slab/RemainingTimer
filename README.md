@@ -11,7 +11,7 @@ This script add remaining days to a certain event to your prompt.
 Opening .zsh-remainingtimer by editor, edit the variables 'EVENTNAME', 'YEAR', 
 'MONTH', and 'DAY'.
 3. Write "source .zsh-remainingtimer" to your .zshrc.  
-	`$ echo 'source .zsh-remainingtimer' >> ~/.zshrc`
+	`$ echo 'source ~/.zsh-remainingtimer' >> ~/.zshrc`
 4. and reflect.  
 	`$ source ~/.zshrc`
 
