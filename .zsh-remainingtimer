@@ -1,10 +1,12 @@
 function setRemainingTimer() {
 ########################################
 ### Set the event name and date hear ###
+
 	local EVENTNAME="オープンキャンパス"
 	local YEAR=2021
 	local MONTH=7
 	local DAY=17
+
 ########################################
 ########################################
 
@@ -19,7 +21,7 @@ function setRemainingTimer() {
 	local TEXT1="まであと"
 	local TEXT2="日"
 
-	local REMAIN=`expr \( \`$CMD -d"$EVENTDATE" +%s\` - \`$CMD +%s\` \) / 60 / 60 / 24`
+	local REMAIN=`expr \( \`$CMD -d"$EVENTDATE" +%s\` - \`$CMD +%s\` \) / 60 / 60 / 24 + 1`
 
 	if	 [ $REMAIN -le  7 ]; then COLOR="red"
 	elif [ $REMAIN -le 14 ]; then COLOR="magenta"
